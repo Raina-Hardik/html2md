@@ -5,14 +5,18 @@ from pathlib import Path
 
 # Read README file
 readme_file = Path(__file__).parent / "README.md"
-long_description = readme_file.read_text(encoding="utf-8") if readme_file.exists() else ""
+long_description = (
+    readme_file.read_text(encoding="utf-8") if readme_file.exists() else ""
+)
 
 # Read requirements
 requirements_file = Path(__file__).parent / "requirements.txt"
 requirements = []
 if requirements_file.exists():
-    requirements = requirements_file.read_text().strip().split('\n')
-    requirements = [req.strip() for req in requirements if req.strip() and not req.startswith('#')]
+    requirements = requirements_file.read_text().strip().split("\n")
+    requirements = [
+        req.strip() for req in requirements if req.strip() and not req.startswith("#")
+    ]
 
 setup(
     name="html2md",
@@ -26,8 +30,8 @@ setup(
     packages=find_packages(),
     install_requires=requirements,
     entry_points={
-        'console_scripts': [
-            'html2md=html2md.cli:main',
+        "console_scripts": [
+            "html2md=html2md.cli:main",
         ],
     },
     python_requires=">=3.7",
