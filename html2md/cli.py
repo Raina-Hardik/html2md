@@ -21,8 +21,8 @@ def print_banner():
     banner = f"""
 {Fore.CYAN}╔══════════════════════════════════════════════════════════════════════╗
 ║                            HTML2MD v{__version__}                            ║
-║                     HTML to Markdown Converter                      ║
-║                  Fast • Flexible • Developer Friendly               ║
+║                     HTML to Markdown Converter                       ║
+║                  Fast • Flexible • Developer Friendly                ║
 ╚══════════════════════════════════════════════════════════════════════╝{Style.RESET_ALL}
 
 Examples:
