@@ -3,8 +3,7 @@
 .PHONY: help install install-dev test test-setup clean lint format build upload-test upload
 
 help:  ## Show this help message
-	@echo "Available targets:"
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-15s %s\n", $$1, $$2}'
+	@python scripts/makefile_help.py
 
 install:  ## Install the package
 	pip install -e .
